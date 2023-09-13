@@ -37,7 +37,7 @@ public class Program1{
 
 //Voici un programme, on va donner le rôle de chaque ligne
 
-package week1.tps; //importation du package
+package week1.tps; //package
 public class Program1{
   public static void main(String [] args){
     int x; int y; //Déclaration de variables de type entier (int) x et y
@@ -102,4 +102,96 @@ Moyenne : 9.2
 Semestre non validé !!!
 */
 
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javaapplication13;
+import java.util.Scanner;
+
+/**
+ *
+ * @author Administrateur
+ */
+public class moyenne {
+    
+    public static void main (String [] args){
+        //objet Scanner
+        Scanner sc = new Scanner(System.in);
+        //Déclaration des variables
+        double note1, note2, note3;
+        int coeff1, coeff2, coeff3;
+        double moy;
+        char reponse = ' ';
+        String nom =" ";
+    do{ 
+    reponse = ' ';   
+    System.out.println("____________Relevé de notes________________\n");
+    System.out.println("Semestre : 1 ---- Année scolaire : 2022/2023");
+    
+    System.out.print("Entrez le nom de l'élève : ");
+    nom = sc.nextLine();
+    
+    //Entrer les coefficients
+    
+    System.out.print("Entrez le coefficient du module Java : ");
+    coeff1 = sc.nextInt(); //TODO : control des coeff
+    System.out.print("Entrez le coefficient du module XML : ");
+    coeff2 = sc.nextInt();
+    System.out.print("Entrez le coefficient du module English : ");
+    coeff3 = sc.nextInt();
+    
+    int[] classe = new int [2]; // un tableau qui peut contenir 2 int
+    int maison[] = {2}; // decl & ini
+    //Vider
+    sc.nextLine();
+    
+    //Entrons les notes
+    
+    System.out.print("Entrez la note du module Java : ");
+    note1 = sc.nextDouble();
+    do{
+           System.out.print("Entrez la note de Java : ");
+       } while (note1<0 || note1>20);
+    System.out.print("Entrez la note du module XML : ");
+    note2 = sc.nextDouble();
+    do{
+           System.out.print("Entrez la note de XML : ");
+       } while (note2<0 && note2>20);
+    System.out.print("Entrez la note du module English : ");
+    note3 = sc.nextDouble();
+    do{
+           System.out.print("Entrez la note de English : ");
+       } while (note3<0 && note3>20);
+    
+    //Vider
+    sc.nextLine();
+    
+    //Calculons la moyenne
+    moy = (note1*coeff1 + note2*coeff2 + note3*coeff3) / (coeff1 + coeff2 + coeff3);
+    
+    //Affichage de la moyenne
+    
+    System.out.println("La moyenne de " +nom+ " est : " +moy);
+    
+    //Condition pour avoir la conclusion
+    
+    if(moy < 10){
+        System.out.println("Semestre non validé !");
+    } else {
+        System.out.println("Semestre Validé !");
+    }
+    System.out.print("Voulez vous calculer la moyenne d'un autre étudiant ?? (o/n) :  ");
+    reponse = sc.nextLine().charAt(0);
+  } while (reponse == 'o');
+    
+    System.out.print("Merci, Au revoir !!! ");
+}
+   // public static void validationNote(String matiere,double note){
+     //   do{
+        //    System.out.print("Entrez la note de : "+matiere);
+        //} while (note<0 && note>20);
+    //}
+}
 
