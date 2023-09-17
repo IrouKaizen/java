@@ -79,6 +79,31 @@ public class Tableau {
 
 /*Exemple de output : 
 
+run:
+Entrez le nombre de lignes du tableau : *
+Entrez le nombre de lignes du tableau : 3
+Entrez le nombre de colonnes du tableau : +
+Entrez le nombre de colonnes du tableau : k
+Entrez le nombre de colonnes du tableau : 2
+Entrez les éléments du tableau à la position [0] [0] : 5
+Entrez les éléments du tableau à la position [0] [1] : 4
+Entrez les éléments du tableau à la position [1] [0] : 7
+Entrez les éléments du tableau à la position [1] [1] : 8
+Entrez les éléments du tableau à la position [2] [0] : 1
+Entrez les éléments du tableau à la position [2] [1] : 5
+Affichons ce que vous avez entré
+Vous avez entré : 5
+Vous avez entré : 4
+
+Vous avez entré : 7
+Vous avez entré : 8
+
+Vous avez entré : 1
+Vous avez entré : 5
+
+La somme des éléments du tableau : 30
+BUILD SUCCESSFUL (total time: 25 seconds)
+
 
 */
 
