@@ -1,4 +1,4 @@
-//Utilisation de l'objet Scanner
+//Utilisation de l'objet Scanner... il sert tout simplement à pouvoir utiliser une donnée entrée par l'utilisateur
 
 import java.util.Scanner; //importation du package
 
@@ -14,5 +14,6 @@ public class Main {
     String str = sc.nextLine(); //nextLine est utilisé pour les String
     
     System.out.println("FIN ! ");
+    sc.close(); // pour mettre fin à l'utilisation de l'objet scanner
   }
 }
