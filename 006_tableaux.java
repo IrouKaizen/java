@@ -107,4 +107,114 @@ BUILD SUCCESSFUL (total time: 25 seconds)
 
 */
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Ce code ci-dessous empêche l'entrée d'espaces et caractères // aidé par Merveil
+
+package javaapplication13;
+
+import java.util.Scanner;
+
+public class Tableau {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Demandez à l'utilisateur de saisir la taille du tableau
+        System.out.print("Entrez le nombre de lignes du tableau : ");
+        int lignes = obtenirEntier(sc);
+
+        System.out.print("Entrez le nombre de colonnes du tableau : ");
+        int colonnes = obtenirEntier(sc);
+
+        // Créez le tableau en fonction des dimensions
+        int[][] tableau = new int[lignes][colonnes];
+
+        // Demandez à l'utilisateur de saisir les éléments du tableau
+        System.out.println("Entrez les éléments du tableau (utilisez l'indice [0][0] pour la première case) : ");
+        remplirTableau(tableau, sc);
+
+        // Affichez le tableau
+        System.out.println("Affichons ce que vous avez entré :");
+        afficherTableau(tableau);
+
+        // Calculez la somme des éléments du tableau
+        int somme = calculerSomme(tableau);
+        System.out.println("La somme des éléments du tableau : " + somme);
+
+        // Fermez le Scanner
+        sc.close();
+    }
+
+    // Méthode pour obtenir un entier valide depuis l'utilisateur
+    public static int obtenirEntier(Scanner sc) {
+        while (true) {
+            String ligne = sc.nextLine().trim();
+            if (!ligne.isEmpty()) {
+                try {
+                    return Integer.parseInt(ligne);
+                } catch (NumberFormatException e) {
+                    System.out.print("Entrez un entier : ");
+                }
+            } else {
+                System.out.print("Entrez un entier : ");
+            }
+        }
+    }
+
+    // Méthode pour remplir le tableau avec des entiers valides
+    public static void remplirTableau(int[][] tableau, Scanner sc) {
+        for (int i = 0; i < tableau.length; i++) {
+            for (int j = 0; j < tableau[i].length; j++) {
+                System.out.print("Entrez l'élément à la position [" + i + "][" + j + "] : ");
+                tableau[i][j] = obtenirEntier(sc);
+            }
+        }
+    }
+
+    // Méthode pour afficher le contenu du tableau
+    public static void afficherTableau(int[][] tableau) {
+        for (int i = 0; i < tableau.length; i++) {
+            for (int j = 0; j < tableau[i].length; j++) {
+                System.out.print(tableau[i][j] + " ");
+            }
+            System.out.println(); // Passage à la ligne pour la prochaine ligne du tableau
+        }
+    }
+
+    // Méthode pour calculer la somme des éléments du tableau
+    public static int calculerSomme(int[][] tableau) {
+        int somme = 0;
+        for (int i = 0; i < tableau.length; i++) {
+            for (int j = 0; j < tableau[i].length; j++) {
+                somme += tableau[i][j];
+            }
+        }
+        return somme;
+    }
+}
+
+/* Exemple de output
+
+  run:
+Entrez le nombre de lignes du tableau :  
+Entrez un entier : +
+Entrez un entier : u
+Entrez un entier : 2
+Entrez le nombre de colonnes du tableau : j
+Entrez un entier : 0h
+Entrez un entier : +-
+Entrez un entier : 2
+Entrez les éléments du tableau (utilisez l'indice [0][0] pour la première case) : 
+Entrez l'élément à la position [0][0] : u
+Entrez un entier : 5
+Entrez l'élément à la position [0][1] : 0
+Entrez l'élément à la position [1][0] : 2
+Entrez l'élément à la position [1][1] : 1
+Affichons ce que vous avez entré :
+5 0 
+2 1 
+La somme des éléments du tableau : 8
+BUILD SUCCESSFUL (total time: 37 seconds)
+
+  */
+
     
