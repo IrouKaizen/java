@@ -195,3 +195,49 @@ public class moyenne {
     //}
 }
 
+
+/* Exercice : Utilisation de variables d'instance et de classe
+
+Créez une classe Personne avec les propriétés suivantes :
+
+Une variable d'instance nom de type String.
+Une variable d'instance age de type int.
+Ajoutez un constructeur à la classe Personne qui prend deux arguments (nom et age) et initialise les propriétés correspondantes.
+
+Ajoutez une méthode afficherDetails à la classe Personne qui affiche le nom et l'âge de la personne.
+
+Créez une classe principale appelée Main avec la méthode main.
+
+Dans la méthode main, créez deux objets Personne avec des noms et des âges différents.
+
+Affichez les détails des deux personnes en appelant la méthode afficherDetails pour chaque objet.*/
+
+//Classe Personne
+public class Personne{
+//Variables d'instances
+  public String nom;
+  public int age;
+//Constructeur
+  public Personne(String nom, int age){
+    this.nom = nom;
+    this.age = age;
+  }
+//methode afficherDetail
+  public void afficherDetail(){
+  System.out.print("nom : " + nom);
+  System.out.print("age : " + age);
+  }
+}
+//classe main
+public class Main{
+//methode main
+  public static void main (String[] args){
+//objets personnes avec noms et ages #ts
+    Personne personne1 = new Personne ("Shelby", 20);
+    Personne personne2 = new Personne ("Thomas", 26);
+  }
+//affichage
+  personne1.afficherDetail();
+  personne2.afficherDetail();
+  }
+}
