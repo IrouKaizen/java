@@ -215,8 +215,8 @@ Affichez les détails des deux personnes en appelant la méthode afficherDetails
 //Classe Personne
 public class Personne{
 //Variables d'instances
-  public String nom;
-  public int age;
+ public String nom;
+ private int age;
 //Constructeur
   public Personne(String nom, int age){
     this.nom = nom;
@@ -228,6 +228,7 @@ public class Personne{
   System.out.print("age : " + age);
   }
 }
+
 //classe main
 public class Main{
 //methode main
