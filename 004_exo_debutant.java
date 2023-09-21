@@ -299,4 +299,80 @@ Nous avons :
 equals() : pour définir l'égalité des objets
 hashcode(): pour retourner un code de hashage de l'objet */
 
+/*
+Supposons que vous construisez un petit jeu de société avec des figurines. Vous avez une classe de base appelée Figurine
+et deux sous-classes appelées Joueur et Monstre. Chacune de ces classes a une méthode afficherRole qui doit être redéfinie
+pour afficher le rôle spécifique de la figurine (joueur ou monstre).
 
+Créez une classe Figurine avec une méthode afficherRole qui affiche "Je suis une figurine".
+
+Créez une sous-classe Joueur de Figurine qui redéfinit la méthode afficherRole pour afficher "Je suis un joueur".
+
+Créez une sous-classe Monstre de Figurine qui redéfinit la méthode afficherRole pour afficher "Je suis un monstre".
+
+Dans la méthode main, créez une instance de Joueur et une instance de Monstre, puis appelez la méthode afficherRole pour chaque instance.
+Utilisez le polymorphisme pour simplifier le code.
+*/
+
+/////////////J'ai essayé//////////////
+
+public class Figurine {
+   void afficherRole(){
+       System.out.println("Je suis une figurine");
+   }
+   public static void main (String[] args){
+    //Appel de fonctions
+       Figurine joueur1 = new Joueur();
+       Figurine monstre1 = new Monstre();      
+    //afficher
+        joueur1.afficherRole();
+        monstre1.afficherRole();
+   }
+}
+class Joueur extends Figurine{
+    @Override
+    void afficherRole(){
+    System.out.println("Je suis un joueur");
+    }
+}
+class Monstre extends Figurine{
+    @Override
+    void afficherRole(){
+    System.out.println("Je suis un monstre");
+  }
+}
+/*Output :
+run:
+Je suis un joueur
+Je suis un monstre
+BUILD SUCCESSFUL (total time: 0 seconds)
+*/
+
+/*
+Enoncé de l'exercice :
+
+Vous travaillez sur un système de gestion d'employés pour une entreprise. Vous avez une classe de base appelée Employe
+et plusieurs sous-classes pour différents types d'employés, tels que EmployeTempsPlein et EmployeTempsPartiel. Chacune
+de ces classes doit implémenter des méthodes spécifiques tout en maintenant l'encapsulation et en utilisant le polymorphisme,
+la surcharge et la redéfinition.
+
+Créez une classe de base Employe avec les attributs privés suivants :
+
+nom (String) : le nom de l'employé.
+salaireBase (double) : le salaire de base de l'employé.
+
+-Ajoutez une méthode calculerSalaire dans la classe Employe qui renvoie le salaire total de l'employé en fonction du salaire de base.
+Cette méthode sera redéfinie par les sous-classes pour prendre en compte leur logique spécifique.
+
+-Créez une sous-classe EmployeTempsPlein de Employe qui ajoute un attribut privé heuresTravaillees (int) et qui redéfinit la méthode
+calculerSalaire pour calculer le salaire total en fonction du salaire de base et du nombre d'heures travaillées. Utilisez la surcharge
+pour fournir deux constructeurs : un avec toutes les informations et un avec seulement le nom et le salaire de base (heures travaillées
+définies à zéro par défaut).
+
+-Créez une sous-classe EmployeTempsPartiel de Employe qui ajoute un attribut privé tauxHoraire (double) et qui redéfinit la méthode
+calculerSalaire pour calculer le salaire total en fonction du taux horaire et du salaire de base. Utilisez la surcharge pour fournir deux
+constructeurs : un avec toutes les informations et un avec seulement le nom et le salaire de base (taux horaire défini à zéro par défaut).
+
+-Dans la méthode main, créez des objets de type EmployeTempsPlein et EmployeTempsPartiel, définissez leurs attributs et calculez leur salaire
+en utilisant la méthode calculerSalaire. Affichez les informations sur chaque employé.
+*/
