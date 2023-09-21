@@ -242,3 +242,61 @@ public class Main{
   personne2.afficherDetail();
   }
 }
+
+//20/09/2023
+
+//Utiliser super() pour hériter une méthode Manger, un constructeur Boire et Accéder aux variables x de la classe parente et y de la classe fille 
+super.Manger(); //appel à la méthode
+super(Boire); //appel au constructeur
+System.out.print(super.x); //var de la classe parente
+System.out.print(this.y); //var de la classe enfant
+
+/*Surcharge : C'est la copie d'une méthode mais avec des paramètres différentes*/
+class Calculatrice {
+    int addition(int a, int b) {
+        return a + b;
+    }
+    double addition(double a, double b) { //Surcharge
+        return a + b;
+    }
+}
+
+/* Interface : classe contenant que des méthodes abstraites*/
+interface Forme{
+  double Perimetre();
+  double Aire();
+}
+
+/*Encapsulation : regroupement de données et les méthodes opérant ces données dans une même entité appelée classe
+Elle empêche l'accès direct aux données de cette classe depuis l'extérieur
+
+Héritage : méthode permettant d'utiliser les propriétés d'une autre classe
+La redéfinition est une surcharge de méthode
+Polymorphisme : permet de manipuler les objets sans vraiment connaître leur type, elle se fait grace à l'héritage et à l'interface*/
+class Animal {
+    void faireDuBruit() {
+        System.out.println("L'animal fait un bruit indéfini.");
+    }
+}
+
+class Chien extends Animal { //héritage
+    @Override
+    void faireDuBruit() { // Redéfinition de la méthode faireDuBruit de la classe parente
+        System.out.println("Le chien aboie.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal monAnimal = new Chien(); // Polymorphisme
+        monAnimal.faireDuBruit(); // Appelle la méthode redéfinie du chien
+    }
+} // Tout ceci est une encapsulation
+
+
+/*La classe object est défini dans le package java.lang , ce qui veut dire qu'on est pas obligé de l'invoquer;
+Nous avons :
+equals() : pour définir l'égalité des objets
+hashcode(): pour retourner un code de hashage de l'objet */
+
+
