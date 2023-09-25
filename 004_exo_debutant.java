@@ -348,7 +348,7 @@ Je suis un monstre
 BUILD SUCCESSFUL (total time: 0 seconds)
 */
 
-/*
+/* Pour comprendre le polymorphisme
 Enoncé de l'exercice :
 
 Vous travaillez sur un système de gestion d'employés pour une entreprise. Vous avez une classe de base appelée Employe
