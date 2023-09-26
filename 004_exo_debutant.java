@@ -376,3 +376,64 @@ constructeurs : un avec toutes les informations et un avec seulement le nom et l
 -Dans la méthode main, créez des objets de type EmployeTempsPlein et EmployeTempsPartiel, définissez leurs attributs et calculez leur salaire
 en utilisant la méthode calculerSalaire. Affichez les informations sur chaque employé.
 */
+
+class Employe {
+    private String nom;
+    private double salaireBase;
+
+    public Employe(String nom, double salaireBase) {
+        this.nom = nom;
+        this.salaireBase = salaireBase;
+    }
+
+    public double calculerSalaire() {
+        return salaireBase;
+    }
+}
+
+class EmployeTempsPlein extends Employe {
+    private int heuresTravaillees;
+
+    public EmployeTempsPlein(String nom, double salaireBase, int heuresTravaillees) {
+        super(nom, salaireBase);
+        this.heuresTravaillees = heuresTravaillees;
+    }
+
+    public EmployeTempsPlein(String nom, double salaireBase) {
+        super(nom, salaireBase);
+    }
+
+    @Override
+    public double calculerSalaire() {
+        return super.calculerSalaire() + (heuresTravaillees * super.calculerSalaire());
+    }
+}
+
+class EmployeTempsPartiel extends Employe {
+    private double tauxHoraire;
+
+    public EmployeTempsPartiel(String nom, double salaireBase, double tauxHoraire) {
+        super(nom, salaireBase);
+        this.tauxHoraire = tauxHoraire;
+    }
+
+    public EmployeTempsPartiel(String nom, double salaireBase) {
+        super(nom, salaireBase);
+    }
+
+    @Override
+    public double calculerSalaire() {
+        return super.calculerSalaire() + (tauxHoraire * super.calculerSalaire());
+    }
+}
+
+public class GestionEmployes {
+    public static void main(String[] args) {
+        EmployeTempsPlein employe1 = new EmployeTempsPlein("Alice", 15.0, 40);
+        EmployeTempsPartiel employe2 = new EmployeTempsPartiel("Bob", 20.0, 0.5);
+
+        // Affichez les informations sur les employés
+        System.out.println("Employé Temps Plein : " + employe1.calculerSalaire());
+        System.out.println("Employé Temps Partiel : " + employe2.calculerSalaire());
+    }
+}
