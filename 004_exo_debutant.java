@@ -378,19 +378,20 @@ en utilisant la méthode calculerSalaire. Affichez les informations sur chaque e
 */
 
 class Employe {
+//Les attributs private
     private String nom;
     private double salaireBase;
-
+//constructeur de la classe Employe
     public Employe(String nom, double salaireBase) {
         this.nom = nom;
         this.salaireBase = salaireBase;
     }
-
+//Méthode calculerSalaire
     public double calculerSalaire() {
         return salaireBase;
     }
 }
-
+//classe fille 1
 class EmployeTempsPlein extends Employe {
     private int heuresTravaillees;
 
@@ -408,7 +409,7 @@ class EmployeTempsPlein extends Employe {
         return super.calculerSalaire() + (heuresTravaillees * super.calculerSalaire());
     }
 }
-
+//classe fille 2
 class EmployeTempsPartiel extends Employe {
     private double tauxHoraire;
 
@@ -426,7 +427,7 @@ class EmployeTempsPartiel extends Employe {
         return super.calculerSalaire() + (tauxHoraire * super.calculerSalaire());
     }
 }
-
+//fonction main pour exécution
 public class GestionEmployes {
     public static void main(String[] args) {
         EmployeTempsPlein employe1 = new EmployeTempsPlein("Alice", 15.0, 40);
