@@ -14,6 +14,14 @@ public class Program1{
   }
 } /*Ce code s'exécute car la signature de main et de son caractère est correcte*/
 
+//  2__________________
+public class Program1{
+  public static void main(String [] args) {
+    System.out.println("Hello world !!");
+  }
+} /*Ce code s'exécute car la signature de main et de son caractère est correcte*/
+
+
 //  3__________________
 public class Program1{
   public static void main(String args []) {
