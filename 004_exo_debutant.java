@@ -438,3 +438,4 @@ public class GestionEmployes {
         System.out.println("Employé Temps Partiel : " + employe2.calculerSalaire());
     }
 }
+//Go begin Spring Boot right now>>>>>>>><
